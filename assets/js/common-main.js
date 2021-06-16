@@ -7,10 +7,11 @@
    */
   const select = (el, all = false) => {
     el = el.trim()
+    console.log(el,all)
     if (all) {
       return [...document.querySelectorAll(el)]
     } else {   
-      console.log(document.querySelector(el)) 
+      console.log(el)
       return document.querySelector(el)
     }
   }
@@ -135,9 +136,10 @@
    * Scrool with ofset on links with a class name .scrollto
    */
   on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
+    console.log("men",this.hash)
+   // if (select(this.hash)) {
       e.preventDefault()
-
+     
       let navbar = select('#navbar')
       if (navbar.classList.contains('navbar-mobile')) {
         navbar.classList.remove('navbar-mobile')
@@ -146,7 +148,10 @@
         navbarToggle.classList.toggle('bi-x')
       }
       scrollto(this.hash)
-    }
+    // }
+    // else{
+    //   console.log("kjkkjk")
+    // }
   }, true)
 
   /**
