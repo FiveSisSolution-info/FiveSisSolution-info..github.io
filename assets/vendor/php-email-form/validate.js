@@ -7,7 +7,7 @@
   "use strict";
 
   let forms = document.querySelectorAll('.php-email-form');
-
+  console.log(forms)
   forms.forEach( function(e) {
     e.addEventListener('submit', function(event) {
       event.preventDefault();
@@ -50,6 +50,7 @@
   });
 
   function php_email_form_submit(thisForm, action, formData) {
+    console.log("jkjkjkj")
     fetch(action, {
       method: 'POST',
       body: formData,

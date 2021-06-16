@@ -7,11 +7,9 @@
    */
   const select = (el, all = false) => {
     el = el.trim()
-    console.log(el,all)
     if (all) {
       return [...document.querySelectorAll(el)]
     } else {   
-      console.log(el)
       return document.querySelector(el)
     }
   }
@@ -79,11 +77,9 @@
    * Header fixed top on scroll
    */
   let selectHeader = select('#header')
-  console.log(selectHeader)
   if (selectHeader) {
     let headerOffset = selectHeader.offsetTop
     let nextElement = selectHeader.nextElementSibling
-    console.log(selectHeader.nextElementSibling)
     const headerFixed = () => {
       if ((headerOffset - window.scrollY) <= 0) {
         selectHeader.classList.add('fixed-top')        
@@ -136,7 +132,6 @@
    * Scrool with ofset on links with a class name .scrollto
    */
   on('click', '.scrollto', function(e) {
-    console.log("men",this.hash)
    // if (select(this.hash)) {
       e.preventDefault()
      
